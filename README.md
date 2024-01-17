@@ -37,7 +37,7 @@ The user is prompted to input two documents (text or PDF) for plagiarism analysi
 For text input, the script performs Named Entity Recognition (NER) using SpaCy, checks plagiarism using TF-IDF and cosine similarity, and provides summaries of both documents.
 For PDF input (executed in a Google Colab environment), the script allows users to upload PDFs manually. It extracts text from the PDFs, performs NER, checks plagiarism, and displays the results.
 
--Displayed Results:
+- Displayed Results:
 Named Entities: Lists named entities identified in each document.
 Plagiarism Similarity: Prints the similarity percentage between the two documents.
 Document Summaries: Provides summaries of both documents.
