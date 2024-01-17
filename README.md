@@ -4,18 +4,42 @@
 # Introduction
 The project gives the plagarism percentage between two text and pdfs and also give the NER for the data uploaded.
 
-# Dependencies
-Ensure the installation of the following libraries before running the Colab notebook:
+# Libraries Imported:
 
-- spacy
-- sklearn
-- fitz
-- os
-- en_core_web_sm
-- PyMuPDF
+- spacy: Used for natural language processing.
+- sklearn.feature_extraction.text.TfidfVectorizer: This library is employed for TF-IDF vectorization, which is a numerical representation of the text.
+- sklearn.metrics.pairwise.cosine_similarity: Utilized for computing the cosine similarity between vectors.
 
-# Code
+# Functions:
 
-The integrated process of the two codes begins with user interaction, prompting input of either two text documents or two PDF files in a Colab environment. Both codes leverage SpaCy for Named Entity Recognition (NER), extracting entities from the provided documents or PDFs. Plagiarism detection is achieved through TF-IDF vectorization and cosine similarity computation, revealing the similarity between the two documents or extracted text. Additionally, a simple text summarization function condenses each document by extracting the initial 100 characters. In the second code snippet, tailored for PDF processing in Colab, the PyMuPDF library extracts text from each page of the uploaded PDFs. The display of results includes information on named entities, plagiarism similarity, and document summaries. The Colab-specific steps involve installing necessary libraries using pip and python commands, as well as manual PDF uploads using the files module in Google Colab. Collectively, these steps create a comprehensive text analysis process encompassing entity recognition, plagiarism detection, summarization, and PDF-specific functionalities.
+- perform_ner(text):
+Input: Text as a parameter.
+Process: Uses SpaCy to perform Named Entity Recognition (NER) on the provided text.
+Output: Returns a list of named entities extracted from the text.
+
+- check_plagiarism(doc1, doc2):
+Input: Two documents (strings) for comparison.
+Process: Converts the documents into TF-IDF matrices and calculates the cosine similarity between them.
+Output: Returns the plagiarism similarity as a numeric value.
+
+- summarize_text(text):
+Input: Text as a parameter.
+Process: Provides a summary of the text by extracting the first 100 characters.
+Output: Returns the summarized text.
+
+- extract_text_from_pdf(pdf_path):
+Input: File path to a PDF document.
+Process: Uses PyMuPDF to open the PDF, extract text from each page, and concatenate the text.
+Output: Returns the extracted text from the PDF.
+
+- Execution:
+The user is prompted to input two documents (text or PDF) for plagiarism analysis.
+For text input, the script performs Named Entity Recognition (NER) using SpaCy, checks plagiarism using TF-IDF and cosine similarity, and provides summaries of both documents.
+For PDF input (executed in a Google Colab environment), the script allows users to upload PDFs manually. It extracts text from the PDFs, performs NER, checks plagiarism, and displays the results.
+
+-Displayed Results:
+Named Entities: Lists named entities identified in each document.
+Plagiarism Similarity: Prints the similarity percentage between the two documents.
+Document Summaries: Provides summaries of both documents.
 
 - Collab Notebook link:https://colab.research.google.com/drive/1etUYPL4Rxu93AVjbj-bdWnC9_TLM0IKG?usp=sharing
